@@ -40,26 +40,26 @@ Choose all property (Column mysql)
 
 ### Build entities with association
 
-> Make the controllers
+> Make the controllers like previously
 
-> Make 2 entities
+> Make 2 entities`: **Categories** & **Articles**
 
-`php bin/console make:entity => Categories`
+`php bin/console make:entity`
 
-`php bin/console make:entity => Articles`
+> Choose which property will be associated, edit one entity with : 
 
-> Choose which property will be associated 
+`php bin/console make:entity` 
 
-`php bin/console make:entity => Articles`
+entity => **Articles**
 
-*name : category*
+* *name : category*
 
-*type : relation*
+* *type : relation*
 
-*relation type : choose between them*
+* *relation type : choose between them*
 
-> Edit migration file
+> Edit migration file like previously
 
-> Persist Entities in Database 
+> Persist Entities in Database like previously 
 
   
