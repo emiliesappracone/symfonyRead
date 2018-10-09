@@ -45,6 +45,7 @@ Choose all property (Column mysql)
 > Make 2 entities
 
 `php bin/console make:entity => Categories`
+
 `php bin/console make:entity => Articles`
 
 > Choose which property will be associated 
