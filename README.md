@@ -105,3 +105,9 @@ In route's method use the value of slug lang : `public function showOneArticle(`
 
 Make a query - available soon
 
+### Assets
+
+- composer require asset
+- copy paste public/ directory css/assets
+- copy paste link css in base.html.twig
+- {{ asset("assets/link/...") }}
