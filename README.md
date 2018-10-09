@@ -79,12 +79,12 @@ In this structure, routes are defined in each method of controllers, due to anno
 - Use slug(s) value in param(s) method :
 
 
-    Class ArticlesController {
-        /**
-        * @Route("/article/{lang}/{id}", name="showOneArticle")
-        */
-        public function showAllArticles($lang, $id){}
-    }
+        Class ArticlesController {
+            /**
+            * @Route("/article/{lang}/{id}", name="showOneArticle")
+            */
+            public function showAllArticles($lang, $id){}
+        }
 
 ### Twig
 
