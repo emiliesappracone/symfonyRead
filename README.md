@@ -74,13 +74,34 @@ In this structure, routes are defined in each method of controllers, due to anno
 
 - Can add slug to pass param in path, via : `@Route("/article/{id}", name="showOneArticle")`
 - Can add requirements to slug, via : `@Route("/article/{id}", name="showOneArticle", requirements={"id"="\d+"})` 
-- if you have many params : `requirements={"param1" : "\d+", "param2" : "\d+"}`
+    - if you have many params : `requirements={"param1" : "\d+", "param2" : "\d+"}`
 - List all routes : `php bin/console debug:router`
 - Use slug(s) value in param(s) method :
 
-        Class ArticlesController {
-            /**
-            * @Route("/article/{lang}/{id}", name="showAllArticles")
-            */
-            public function showAllArticles($lang, $id){}
-        }
+
+    Class ArticlesController {
+        /**
+        * @Route("/article/{lang}/{id}", name="showOneArticle")
+        */
+        public function showAllArticles($lang, $id){}
+    }
+
+### Twig
+
+- available soon 
+
+### Multilingue
+
+Structure of column multilingue is in **JSON**, like below. 
+
+    {
+        "fr" : "mon titre français",
+        "en" : "my english title"
+    }
+    
+In controllers set slug {lang} parameter : `@Route("/{`**lang**`}/article/{id}", name="showOneArticle")`
+
+In route's method use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}`
+
+Make a query - available soon
+
