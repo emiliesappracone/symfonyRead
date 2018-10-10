@@ -43,6 +43,11 @@
 
 `php bin/console make:entity` 
 
+```diff
+When you create an entity : this will create Entity (Model), EntityRepository, Entity templates twig 
+EntityRepository is where you'll create 
+```
+
 - Choose name of Entity (Table mysql)
 - Choose all property (Column mysql)
 - Edit migration file
@@ -268,8 +273,45 @@ Structure of column multilingue is in **JSON**, like below.
     > - Type property : json
     > ... 
     
-In controllers set slug {lang} parameter in route : `@Route("/{`**lang**`}/article/{id}", name="showOneArticle")`
+##### - In controllers : 
+set slug {lang} parameter in route : `@Route("/{`**lang**`}/article/{id}", name="showOneArticle")`
 
-In route's method use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}`
+##### - In route's method :
+use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}`
 
-Make a query - available soon
+##### - With queryBuilder make read and update queries :
+
+- READ :
+
+        /**
+        * @return Services[] Returns an array of Services objects
+        */
+       public function findByServicesByLang($lang)
+       {
+           $connexion = $this->getEntityManager()->getConnection();
+   
+           $query = 'SELECT id, JSON_UNQUOTE(JSON_EXTRACT(name, "$.'.$lang.'")) as name, description, is_highlight, is_valid
+                   FROM services';
+           $stmt = $connexion->prepare($query);
+           $stmt->execute();
+           return $stmt->fetchAll();
+       }
+
+- UPDATE : 
+
+       /**
+       * @param $lang
+       * @param $id
+       * @return bool
+       * @throws \Doctrine\DBAL\DBALException
+       */
+       public function testUpdate($lang,$id){
+            $connexion = $this->getEntityManager()->getConnection();
+       
+            $query = 'UPDATE services
+                      SET name = JSON_REPLACE(name, "$.'.$lang.'", "Jean-Pierre")
+                      WHERE id = :id';
+            $stmt = $connexion->prepare($query);
+            $stmt->bindParam(':id' ,$id);
+            return $stmt->execute();
+       }    
