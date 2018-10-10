@@ -78,7 +78,7 @@ In this structure, routes are defined in each method of controllers, due to anno
         public function showAllArticles(){}
     }
 
-- Make a redirection to this route with the name
+- Make a redirection to this route with the name : `return $this->redirectToRoute("showOneArticle", ["id" => $id]);`
 
 - Can add slug to pass param in path, via : `@Route("/article/{id}", name="showOneArticle")`
 - Can add requirements to slug, via : `@Route("/article/{id}", name="showOneArticle", requirements={"id"="\d+"})` 
