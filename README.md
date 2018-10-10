@@ -104,10 +104,32 @@ List of functions used :
 * if : `{% if %}` *to do* `{% endif %}`
 * if else : `{% if %}` *to do* `{% else %}` *to do* `{% endif %}`
 * elseif : `{% if %}` *to do* `{% elseif %}` *to do* `{% else %}` *to do* `{% endif %}`
+* set variable : `{% set myVar = '1' %}`
+* extends html file : `{% extends 'path' %}`
 * substring : `{{ myVar|slice(start, end) }}`
 * length : `{{ myVar|length }}`
 * concat in echo : `{{ 'content_' ~ myVar }}`
 * twig extension path : `{{ path("routeName" , {"param":myParamVar}) }}`
+* if ternary : `{{ myVar|length > 1 ? 'myVar equals 1' : 'myVar doesn't equal 1' }}`
+* echo children 1 : `{{ myObject.hisChild }}`
+* echo children 2 : `{{ myObject['hisChild'] }}`
+* date format : `{{ myDate|date('d-m-Y') }}` 
+* filtre uppercase : `{% filter upper %}` *this title is in upper* `{% endfilter %}`
+
+For more go : https://twig.symfony.com/doc/2.x/templates.html
+
+> My Twig structure for symfony :
+
+Templates/ 
+- Admin/
+    - admin.html.twig
+    - moduleTemplate/
+        - twigs of template
+- Front/ 
+    - front.html.twig
+    - moduleTemplate/
+        - twigs of template
+- base.html.twig
 
 ### Multilingue
 
