@@ -36,12 +36,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="6321" />
+          <entry key="md" value="6329" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="6321" />
+          <entry key="Markdown" value="6329" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions" />
@@ -59,8 +59,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="146">
-                <caret line="262" column="34" selection-start-line="262" selection-start-column="34" selection-end-line="262" selection-end-column="34" />
+              <first_editor relative-caret-position="106">
+                <caret line="260" column="73" selection-start-line="260" selection-start-column="73" selection-end-line="260" selection-end-column="73" />
               </first_editor>
               <second_editor />
             </state>
@@ -133,12 +133,12 @@
       <option name="presentableId" value="Default" />
       <updated>1539081272680</updated>
       <workItem from="1539081273886" duration="4534000" />
-      <workItem from="1539154311844" duration="13084000" />
+      <workItem from="1539154311844" duration="13140000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17618000" />
+    <option name="totallyTimeSpent" value="17674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1832" y="70" width="1788" height="834" extended-state="0" />
@@ -190,8 +190,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="146">
-            <caret line="262" column="34" selection-start-line="262" selection-start-column="34" selection-end-line="262" selection-end-column="34" />
+          <first_editor relative-caret-position="106">
+            <caret line="260" column="73" selection-start-line="260" selection-start-column="73" selection-end-line="260" selection-end-column="73" />
           </first_editor>
           <second_editor />
         </state>
