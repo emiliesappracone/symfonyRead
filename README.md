@@ -253,12 +253,14 @@ MyProject/
 ### Multilingue
 
 ##### - MySQL
-Structure of column multilingue is in **JSON**, like below. 
-
-    {
-        "fr" : "mon titre français",
-        "en" : "my english title"
-    }
+Structure of column multilingue is in **JSON**, like below.
+ 
+| myProperty                            |
+| ------------------------------------- |
+|    {                                  |
+|        "fr" : "mon titre français",   |
+|        "en" : "my english title"      |
+|    }                                  |
 
 ##### - When make:entity
 
