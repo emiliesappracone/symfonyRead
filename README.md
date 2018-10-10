@@ -133,8 +133,8 @@ Templates/
 
 ```diff
 ! orange
+N.B : When you'll create entity, with cli, templates/ will be updated with new directory entity and file.
 ```
-**N.B :** *When you'll **create entity**, with cli, templates/ will be updated with new directory entity and file.*
 
 Example of my **simple** *base.html.twig* :
 
