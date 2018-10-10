@@ -271,7 +271,7 @@ Structure of column multilingue is in **JSON**, like below.
     > - Type property : json
     > ... 
     
-In controllers set slug {lang} parameter in route : ```php @Route("/{`**lang**`}/article/{id}", name="showOneArticle")```
+In controllers set slug {lang} parameter in route : `@Route("/{`**lang**`}/article/{id}", name="showOneArticle")`
 
 In route's method use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}`
 
