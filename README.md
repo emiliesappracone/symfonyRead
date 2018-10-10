@@ -6,8 +6,8 @@
 ### Bundles :
 `composer require twig`
 `composer require annotations`
-`composer require profiler —dev`
-`composer require maker —dev`
+`composer require profiler --dev`
+`composer require maker --dev`
 `composer require doctrine`
 
 ### Env :
@@ -107,7 +107,10 @@ Make a query - available soon
 
 ### Assets
 
-- composer require asset
+Download bundle asset :
+
+`composer require asset`
+
 - copy paste public/ directory css/assets
 - copy paste link css in base.html.twig
 - {{ asset("assets/link/...") }}
