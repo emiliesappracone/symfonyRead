@@ -131,7 +131,7 @@ Templates/
         - twigs of template
 - base.html.twig
 
-<tspan fill="red">**N.B :** *When you'll **create entity**, with cli, templates/ will be updated with new directory entity and file.*</tspan>
+! **N.B :** *When you'll **create entity**, with cli, templates/ will be updated with new directory entity and file.*
 
 Example of my **simple** *base.html.twig* :
 
