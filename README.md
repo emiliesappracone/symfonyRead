@@ -289,40 +289,40 @@ QueryBuilder works with EntityManager. It allows you to build queries : C.R.U.D 
 
 Retrieve all services infos and name by lang :
 
-        /**
-        * @return Services[] Returns an array of Services objects
-        */
-       public function findByServicesByLang($lang)
-       {
-           $connexion = $this->getEntityManager()->getConnection();
+     /**
+      * @return Services[] Returns an array of Services objects
+      */
+     public function findByServicesByLang($lang)
+     {
+         $connexion = $this->getEntityManager()->getConnection();
    
-           $query = 'SELECT id, JSON_UNQUOTE(JSON_EXTRACT(name, "$.'.$lang.'")) as name, description, is_highlight, is_valid
-                   FROM services';
-           $stmt = $connexion->prepare($query);
-           $stmt->execute();
-           return $stmt->fetchAll();
-       }
+         $query = 'SELECT id, JSON_UNQUOTE(JSON_EXTRACT(name, "$.'.$lang.'")) as name, description, is_highlight, is_valid
+                 FROM services';
+         $stmt = $connexion->prepare($query);
+         $stmt->execute();
+         return $stmt->fetchAll();
+     }
 
 - UPDATE : 
 
 Update name by lang and id ofc :
 
-       /**
-       * @param $lang
-       * @param $id
-       * @return bool
-       * @throws \Doctrine\DBAL\DBALException
-       */
-       public function updateServiceByLangAndId($lang,$id){
-            $connexion = $this->getEntityManager()->getConnection();
+     /**
+     * @param $lang
+     * @param $id
+     * @return bool
+     * @throws \Doctrine\DBAL\DBALException
+     */
+     public function updateServiceByLangAndId($lang,$id){
+          $connexion = $this->getEntityManager()->getConnection();
        
-            $query = 'UPDATE services
-                      SET name = JSON_REPLACE(name, "$.'.$lang.'", "Jean-Pierre")
-                      WHERE id = :id';
-            $stmt = $connexion->prepare($query);
-            $stmt->bindParam(':id' ,$id);
-            return $stmt->execute();
-       }
+          $query = 'UPDATE services
+                    SET name = JSON_REPLACE(name, "$.'.$lang.'", "Jean-Pierre")
+                    WHERE id = :id';
+          $stmt = $connexion->prepare($query);
+          $stmt->bindParam(':id' ,$id);
+          return $stmt->execute();
+     }
 
 ###### 2- CALL FUNCTIONS IN ENTITYCONTROLLER
 
