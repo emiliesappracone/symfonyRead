@@ -5,9 +5,13 @@
 
 ### Bundles :
 `composer require twig`
+
 `composer require annotations`
+
 `composer require profiler --dev`
+
 `composer require maker --dev`
+
 `composer require doctrine`
 
 ### Env :
@@ -88,7 +92,22 @@ In this structure, routes are defined in each method of controllers, due to anno
 
 ### Twig
 
-- available soon 
+Twig is a template engine for PHP. You can use Smarty too, but I choose Twig.
+Twig have his own syntax, like below :
+
+- echo variable : `{{ myVariable }}`
+- call function : `{% for item in array %}` what you do in `{% endfor %}`
+
+List of functions used :
+
+* for : `{% for item in array %}` to do `{% endfor %}`
+* if : `{% if %}` to do `{% endif %}`
+* if else : `{% if %}` to do `{% else %}` to do `{% endif %}`
+* elseif : `{% if %}` to do `{% elseif %}` to do `{% else %}` to do {% endif %}`
+* substring : `{{ myVar|slice(start, end) }}`
+* length : `{{ myVar|length }}`
+* concat in echo : `{{ 'content_' ~ myVar }}`
+* twig extension path : `{{ path("routeName" , {"param":myParamVar}) }}`
 
 ### Multilingue
 
