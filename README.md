@@ -96,7 +96,7 @@ Twig is a template engine for PHP. You can use Smarty too, but I choose Twig.
 Twig have his own syntax, like below :
 
 - echo variable : `{{ myVariable }}`
-- call function : `{% for item in array %}` what you do in `{% endfor %}`
+- call function : `{% for item in array %}` to do `{% endfor %}`
 
 List of functions used :
 
