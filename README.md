@@ -218,7 +218,7 @@ Templates/
 
 ### Assets
 
-Make you link relative with Asset Bundle. More info : https://symfony.com/doc/current/frontend/encore/versioning.html
+Make you link relative with Asset Bundle. More infos : https://symfony.com/doc/current/frontend/encore/versioning.html
 
 - Download bundle asset :
 
