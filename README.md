@@ -1,5 +1,9 @@
 ## Create symfony project
 
+```diff
++ Sorry for english
+```
+
 ### Start :
 `composer create-project symfony/skeleton MyProject`
 
@@ -151,10 +155,6 @@ Example of my **simple** *base.html.twig* :
             <link href="http://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet" type="text/css">
             <!-- LINKS SUPERLIST CSS -->
             <link href="assets/libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-            <link href="assets/libraries/owl.carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" >
-            <link href="assets/libraries/colorbox/example1/colorbox.css" rel="stylesheet" type="text/css" >
-            <link href="assets/libraries/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css">
-            <link href="assets/libraries/bootstrap-fileinput/fileinput.min.css" rel="stylesheet" type="text/css">
             <link href="assets/css/superlist.css" rel="stylesheet" type="text/css" >
             {% block stylesheets %}{% endblock %}
         </head>
@@ -172,7 +172,46 @@ Example of my **simple** *base.html.twig* :
         </body>
     </html>
 
+```diff
+! here you can call all js and css will be call for front and admin part 
+```
 
+Example of my **simple** *admin.html.twig* :
+
+    {% extends 'base.html.twig' %}
+         {% block header %}
+            <nav>
+                <ul>
+                    <li>Menu 1</li>
+                </ul>
+            </nav>
+         {% endblock %}
+         {% block container %}
+            - this will be overloaded in twigs child
+         {% endblock %}
+         {% block footer %}
+            <footer>My Footer</footer>
+         {% endblock %}
+    {% endblock %}
+
+```diff
+! here you can define menu and footer that will be call in admin part 
+```
+
+Example of my **simple** *admin/myModule/index.html.twig* :
+
+    {% extends 'admin/admin.html.twig' %}
+         {% block container %}
+            <div>My content of index.html.twig</div>
+         {% endblock %}
+    {% endblock %}
+    
+```diff
+! here you can overload block container with new data for each admin/module/ files
+```
+
+! Important : all twig blocks have to be define in base.html.twig. If you define one in child of base it won't show you the content in the new twig block.
+    
 ### Multilingue
 
 Structure of column multilingue is in **JSON**, like below. 
