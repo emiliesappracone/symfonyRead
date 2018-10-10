@@ -1,4 +1,4 @@
-## Create symfony project
+## My best practices for symfony project
 
 ```diff
 + Sorry for english
@@ -213,6 +213,16 @@ Templates/
 ```diff
 - Important : all twig blocks have to be define in base.html.twig. If you define one in child of base it won't show you the content in the new twig block.
 ```
+
+### Assets
+
+Download bundle asset :
+
+`composer require asset`
+
+- copy paste public/ directory css/assets
+- copy paste link css in base.html.twig
+- {{ asset("assets/link/...") }}
     
 ### Multilingue
 
@@ -228,13 +238,3 @@ In controllers set slug {lang} parameter : `@Route("/{`**lang**`}/article/{id}",
 In route's method use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}`
 
 Make a query - available soon
-
-### Assets
-
-Download bundle asset :
-
-`composer require asset`
-
-- copy paste public/ directory css/assets
-- copy paste link css in base.html.twig
-- {{ asset("assets/link/...") }}
