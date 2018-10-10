@@ -131,7 +131,9 @@ Templates/
         - twigs of template
 - base.html.twig
 
-! **N.B :** *When you'll **create entity**, with cli, templates/ will be updated with new directory entity and file.*
+! orange
+
+**N.B :** *When you'll **create entity**, with cli, templates/ will be updated with new directory entity and file.*
 
 Example of my **simple** *base.html.twig* :
 
