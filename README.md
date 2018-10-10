@@ -1,9 +1,9 @@
 ## My best practices for symfony project
 
-<a href="https://github.com/emiliesappracone/symfony_read#start-">test</a>
+<a href="https://github.com/emiliesappracone/symfony_read#start-">Start</a>
 
 ```diff
-+ Sorry for english
++ Sorry for my english
 ```
 
 ### Start :
@@ -218,13 +218,30 @@ Templates/
 
 ### Assets
 
+Make you link relative with Asset Bundle. More info : https://symfony.com/doc/current/frontend/encore/versioning.html
+
 Download bundle asset :
 
 `composer require asset`
 
-- copy paste public/ directory css/assets
-- copy paste link css in base.html.twig
-- {{ asset("assets/link/...") }}
+###### IF YOU ALREADY HAVE CSS
+- Copy paste you asset/ directory in Public/ (at the root of the project)
+
+MyProject/
+
+    Public/
+        asset/
+             css/
+             js/
+             ...   
+
+- Copy paste link css in base.html.twig
+
+`<link href="assets/css/myCss.css" rel="stylesheet" type="text/css" >`
+
+- Use asset function from Asset Bundle
+
+`<link href="{{ asset('assets/css/myCss.css') }}" rel="stylesheet" type="text/css">`
     
 ### Multilingue
 
