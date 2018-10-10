@@ -258,10 +258,10 @@ Structure of column multilingue is in **JSON**, like below.
  
 | myProperty                            |
 | ------------------------------------- |
-|    {                                  |
-|        "fr" : "mon titre français",   |
-|        "en" : "my english title"      |
-|    }                                  |
+|{   <br>                           |
+|    "fr" : "mon titre français",<br>|
+|    "en" : "my english title"<br>      |
+|}                                  |
 
 ##### - When make:entity
 
