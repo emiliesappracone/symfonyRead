@@ -131,7 +131,7 @@ Templates/
         - twigs of template
 - base.html.twig
 
-<font style='color:red'>**N.B :** *When you'll **create entity**, with cli, templates/ will be updated with new directory entity and file.*</font>
+<font fill="red">**N.B :** *When you'll **create entity**, with cli, templates/ will be updated with new directory entity and file.*</font>
 
 Example of my **simple** *base.html.twig* :
 
