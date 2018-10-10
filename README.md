@@ -131,6 +131,46 @@ Templates/
         - twigs of template
 - base.html.twig
 
+**N.B :** *When you'll **create entity**, with cli, templates/ will be updated with new directory entity and file.*
+
+Example of my **simple** *base.html.twig* :
+
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>{% block title %}Welcome!{% endblock %}</title>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    
+            <!-- CDN BOOTSTRAP -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+            <!-- CDN GOOGLE FONT -->
+            <link href="http://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet" type="text/css">
+            <!-- LINKS SUPERLIST CSS -->
+            <link href="assets/libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+            <link href="assets/libraries/owl.carousel/assets/owl.carousel.css" rel="stylesheet" type="text/css" >
+            <link href="assets/libraries/colorbox/example1/colorbox.css" rel="stylesheet" type="text/css" >
+            <link href="assets/libraries/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" type="text/css">
+            <link href="assets/libraries/bootstrap-fileinput/fileinput.min.css" rel="stylesheet" type="text/css">
+            <link href="assets/css/superlist.css" rel="stylesheet" type="text/css" >
+            {% block stylesheets %}{% endblock %}
+        </head>
+        <body>
+            {% block body %}
+                {% block header %}
+                {% endblock %}
+                {% block container %}
+                {% endblock %}
+                {% block footer %}
+                {% endblock %}
+            {% endblock %}
+            <script src=""></script>
+            {% block javascripts %}{% endblock %}
+        </body>
+    </html>
+
+
 ### Multilingue
 
 Structure of column multilingue is in **JSON**, like below. 
