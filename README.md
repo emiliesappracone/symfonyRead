@@ -173,7 +173,7 @@ Example of my **simple** *base.html.twig* :
     </html>
 
 ```diff
-! here you can call all js and css will be call for front and admin part 
+! here you can call all js and css will be called for front and admin part 
 ```
 
 Example of my **simple** *admin.html.twig* :
@@ -210,7 +210,9 @@ Example of my **simple** *admin/myModule/index.html.twig* :
 ! here you can overload block container with new data for each admin/module/ files
 ```
 
+```diff
 ! Important : all twig blocks have to be define in base.html.twig. If you define one in child of base it won't show you the content in the new twig block.
+```
     
 ### Multilingue
 
