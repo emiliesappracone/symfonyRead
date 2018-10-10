@@ -245,14 +245,23 @@ MyProject/
     
 ### Multilingue
 
+##### - MySQL
 Structure of column multilingue is in **JSON**, like below. 
 
     {
         "fr" : "mon titre français",
         "en" : "my english title"
     }
+
+##### - When make:entity
+
+    > php bin/console make:entity
+    > Choose entity Name : MyEntity
+    > Add attribut/property : myProperty
+    > - Type property : json
+    > ... 
     
-In controllers set slug {lang} parameter : `@Route("/{`**lang**`}/article/{id}", name="showOneArticle")`
+In controllers set slug {lang} parameter in route : `@Route("/{`**lang**`}/article/{id}", name="showOneArticle")`
 
 In route's method use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}`
 
