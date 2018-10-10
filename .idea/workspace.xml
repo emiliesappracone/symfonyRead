@@ -22,22 +22,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="js" value="1" />
           <entry key="md" value="1" />
+          <entry key="php" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
+          <entry key="JavaScript" value="1" />
           <entry key="Markdown" value="1" />
+          <entry key="PHP" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="5377" />
+          <entry key="md" value="5950" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="5377" />
+          <entry key="Markdown" value="5950" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions" />
@@ -55,8 +59,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="138">
-                <caret line="7" column="207" selection-start-line="7" selection-start-column="207" selection-end-line="7" selection-end-column="207" />
+              <first_editor relative-caret-position="140">
+                <caret line="7" column="417" selection-start-line="7" selection-start-column="417" selection-end-line="7" selection-end-column="417" />
               </first_editor>
               <second_editor />
             </state>
@@ -129,12 +133,12 @@
       <option name="presentableId" value="Default" />
       <updated>1539081272680</updated>
       <workItem from="1539081273886" duration="4534000" />
-      <workItem from="1539154311844" duration="11788000" />
+      <workItem from="1539154311844" duration="12261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16322000" />
+    <option name="totallyTimeSpent" value="16795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1832" y="70" width="1788" height="834" extended-state="0" />
@@ -168,11 +172,26 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Dockers/ctec_microapps/src/front/js/gmap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4220" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Dockers/ctec_microapps/src/front/template/head.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Dockers/ctec_microapps/src/front/template/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="138">
-            <caret line="7" column="207" selection-start-line="7" selection-start-column="207" selection-end-line="7" selection-end-column="207" />
+          <first_editor relative-caret-position="140">
+            <caret line="7" column="417" selection-start-line="7" selection-start-column="417" selection-end-line="7" selection-end-column="417" />
           </first_editor>
           <second_editor />
         </state>
