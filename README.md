@@ -211,7 +211,7 @@ Example of my **simple** *admin/myModule/index.html.twig* :
 ```
 
 ```diff
-! Important : all twig blocks have to be define in base.html.twig. If you define one in child of base it won't show you the content in the new twig block.
+- Important : all twig blocks have to be define in base.html.twig. If you define one in child of base it won't show you the content in the new twig block.
 ```
     
 ### Multilingue
