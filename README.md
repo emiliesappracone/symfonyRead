@@ -281,7 +281,13 @@ use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}
 
 ##### - With queryBuilder make read and update queries :
 
+###### 1- CREATE FUNCTIONS READ AND UPDATE IN ENTITYREPOSITORY
+
+QueryBuilder works with EntityManager. It allows you to build queries : C.R.U.D personalized.
+
 - READ :
+
+Retrieve all services infos and name by lang :
 
         /**
         * @return Services[] Returns an array of Services objects
@@ -299,13 +305,15 @@ use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}
 
 - UPDATE : 
 
+Update name by lang and id ofc :
+
        /**
        * @param $lang
        * @param $id
        * @return bool
        * @throws \Doctrine\DBAL\DBALException
        */
-       public function testUpdate($lang,$id){
+       public function updateServiceByLangAndId($lang,$id){
             $connexion = $this->getEntityManager()->getConnection();
        
             $query = 'UPDATE services
@@ -314,4 +322,50 @@ use the value of slug lang : `public function showOneArticle(`**$lang**`, $id){}
             $stmt = $connexion->prepare($query);
             $stmt->bindParam(':id' ,$id);
             return $stmt->execute();
-       }    
+       }
+
+###### 2- CALL FUNCTIONS IN ENTITYCONTROLLER
+
+    /**
+     * @method show all services by lang
+     * @Route("/{lang}/services", name="servicesByLang")
+     */
+    public function servicesByLang($lang){
+        $services = $this->getDoctrine()->getRepository(Services::class)->findByServicesByLang($lang);
+        return $this->render('front/services/index.html.twig', [
+            'services' => $services,
+            'lang' => $lang
+        ]);
+    }    
+   
+
+    /**
+     * @method update service with id and lang
+     * @Route("/{lang}/services/update/{id}", name="updateServiceByLangAndId")
+     */
+    public function updateService($lang, $id){
+        $result = $this->getDoctrine()->getRepository(Services::class)->updateServiceByLangAndId($lang, $id);
+        // if update is done successfully
+        if($result){
+            // redirect to route
+            return $this->redirectToRoute("servicesByLang", ["lang" => $lang]);
+        }
+    }
+
+###### 2- IN VIEW
+
+    {% for service in services %}
+        <tr>
+            <td>{{ service.id }}</td>
+            {% if service.name is not null %}
+                <td>{{ service.name }}</td>
+            {% else %}
+                <td> - </td>
+            {% endif %}
+            <td>{{ service.description }}</td>
+            <td>
+                <a href="{{ path("showOneService", {"id":service.id, "lang":lang}) }}"><i class="fa fa-eye"></i></a>
+                <a href="{{ path("updateTest", {"id":service.id, "lang":lang}) }}"><i class="fa fa-pencil text-danger"></i></a>
+            </td>
+        </tr>
+    {% endfor %}
