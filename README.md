@@ -139,7 +139,7 @@ Templates/
 - N.B : When you'll create entity, with cli, templates/ will be updated with new directory entity and file.
 ```
 
-Example of my **simple** *base.html.twig* :
+1- Example of my **simple** *base.html.twig* :
 
     <!DOCTYPE html>
     <html>
@@ -176,7 +176,7 @@ Example of my **simple** *base.html.twig* :
 ! here you can call all js and css will be called for front and admin part 
 ```
 
-Example of my **simple** *admin.html.twig* :
+2- Example of my **simple** *admin.html.twig* :
 
     {% extends 'base.html.twig' %}
          {% block header %}
@@ -198,7 +198,7 @@ Example of my **simple** *admin.html.twig* :
 ! here you can define menu and footer that will be call in admin part 
 ```
 
-Example of my **simple** *admin/myModule/index.html.twig* :
+3- Example of my **simple** *admin/myModule/index.html.twig* :
 
     {% extends 'admin/admin.html.twig' %}
          {% block container %}
