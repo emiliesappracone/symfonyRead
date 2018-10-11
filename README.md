@@ -287,7 +287,7 @@ For instance :
 
 - Build form entity
   
-###### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - TEST
+###### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - **MAKE YOUR OWN QUERIES**
 
 ```diff
 ! cd rootOfYouProject
@@ -415,10 +415,70 @@ This is a basic call to form in view.
         {{ form_end(form) }}
     {% endblock %}
 
-###### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY 
+###### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY - **USE MANAGER TO UPDATE**
 
-soon available
+##### EntityType => ServicesType
+
+     public function buildForm(FormBuilderInterface $builder, array $options)
+     {
+         $builder
+             ->add('description', TextareaType::class)
+             ->add('is_highlight', CheckboxType::class, ['required' => false])
+             ->add('is_valid', CheckboxType::class, ['required' => false])
+             ->add('name', CollectionType::class, [])
+             ->add('submit', SubmitType::class)
+         ;
+     }
     
+     public function configureOptions(OptionsResolver $resolver)
+     {
+         $resolver->setDefaults(['data_class' => Services::class]);
+     }
+     
+```diff
++ Change from A-
+* Add all fields/properties of entity as input/textarea/etc...
+* Important with CollectionType input you can change JSON of you property
+* Add Service::class at setDefaults method of configureOptions method => purpose is to link entity and data from form
+```     
+    
+##### EntityController => ServicesController
+
+    /**
+     * UPDATE DESCRIPTION OF SERVICE
+     * @Route("/{lang}/services/update/{id}", name="updateServiceDescription")
+     */
+    public function updateDescription($lang, $id, Request $request){
+        // call what service need to be updated
+        /* method only by id */
+        $service = $this->getDoctrine()->getRepository(Services::class)->find($id);
+        // call form entity class form
+        $form = $this->createForm(ServicesType::class, $service);
+        // pass request to form
+        $form->handleRequest($request);
+        // check if $form is submitted
+        if($form->isSubmitted() && $form->isValid()){
+            $this->getDoctrine()->getManager()->persist($service);
+            $this->getDoctrine()->getManager()->flush();
+            // redirect to route
+            return $this->redirectToRoute("servicesByLang", ["lang" => $lang, "id" => $id]);
+        }
+        // if form not already submitted or not valid call createView method from form to send form in twig view
+        return $this->render('admin/services/form.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
+        );
+    } 
+
+```diff
++ Change from A-
+* Get service by id
+* Processed of collecting data from $form doesn't exist anymore
+* By adding Service::class at setDefaults method of configureOptions method => you linked the entity 
+> then all you have to do is to pass $service in parameter of persist method
+```    
+       
 ## Multilingue
 
 ##### - MySQL
