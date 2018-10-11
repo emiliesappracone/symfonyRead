@@ -600,8 +600,8 @@ Update name by lang and id ofc :
         </tr>
     {% endfor %}
     
- ## Security bundle
+## Security bundle
  
- Install bundle : `composer require symfony/security-bundle`   
+Install bundle : `composer require symfony/security-bundle`   
 
 soon available
