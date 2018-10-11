@@ -332,7 +332,8 @@ Extends AbstractType class.
         
     
 ```diff
-! Be aware of what's class you import/use for fieldType, only use Type of Form bundle. But for EntityType use Doctrine bundle. Be sure you use the good Type class.
+! Be aware of what's class you import/use for fieldType, only use Type of Form bundle. 
+! But for EntityType use Doctrine bundle. Be sure you use the good Type class.
 ```    
 
 ###### EntityRepository file (example : ServicesRepository)
@@ -389,13 +390,15 @@ Extends AbstractType class.
         );
     }
 
-###### Entity view file (example : admin/services/index.html.twig)
+###### Entity view file retrieve all (example : admin/services/index.html.twig)
 
 Here is a table you have to make to show all services. 
-In it just add link route to edit form : `<a href="{{ path("updateServiceDescription", {"id":service.id, "lang":lang}) }}"><i class="fa fa-pencil text-warning"></i></a>`
+In it just add link route to edit form : 
+
+`<a href="{{ path("updateServiceDescription", {"id":service.id, "lang":lang}) }}"><i class="fa fa-pencil text-warning"></i></a>`
                                                                                                                     
 
-###### Entity view file (example : admin/services/form.html.twig)
+###### Entity view file update one (example : admin/services/form.html.twig)
 
 This is a basic call to form in view.
 
