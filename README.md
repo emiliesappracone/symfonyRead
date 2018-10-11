@@ -297,6 +297,11 @@ Extends AbstractType class.
 
 ###### EntityType file (example : ServicesType)
 
+    
+    namespace App\Form;
+
+    use App\Entity\Services;
+    
     use Symfony\Component\Form\AbstractType;
     use Symfony\Component\Form\Extension\Core\Type\SubmitType;
     use Symfony\Component\Form\Extension\Core\Type\TextareaType;
