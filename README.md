@@ -478,6 +478,10 @@ This is a basic call to form in view.
 * By adding Service::class at setDefaults method of configureOptions method => you linked the entity 
 > then all you have to do is to pass $service in parameter of persist method
 ```    
+
+###### C- PERSONALIZE FORM 
+       
+available soon
        
 ## Multilingue
 
@@ -575,7 +579,7 @@ Update name by lang and id ofc :
         }
     }
 
-###### 2- IN VIEW
+###### 3- IN VIEW
 
     {% for service in services %}
         <tr>
