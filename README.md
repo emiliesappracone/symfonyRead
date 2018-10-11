@@ -287,7 +287,7 @@ For instance :
 
 - Build form entity
   
-###### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - **MAKE YOUR OWN QUERIES**
+#### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - **MAKE YOUR OWN QUERIES**
 
 ```diff
 ! cd rootOfYouProject
@@ -415,7 +415,7 @@ This is a basic call to form in view.
         {{ form_end(form) }}
     {% endblock %}
 
-###### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY - **USE MANAGER TO UPDATE**
+#### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY - **USE MANAGER TO UPDATE**
 
 ##### EntityType => ServicesType
 
