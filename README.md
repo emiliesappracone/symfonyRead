@@ -281,7 +281,7 @@ For instance :
 
 - Build form entity
   
-####### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - TEST
+###### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - TEST
 
 ```diff
 ! cd rootOfYouProject
@@ -409,7 +409,7 @@ This is a basic call to form in view.
         {{ form_end(form) }}
     {% endblock %}
 
-####### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY 
+###### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY 
 
 soon available
     
