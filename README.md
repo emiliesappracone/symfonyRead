@@ -13,10 +13,10 @@
 | <a href="https://github.com/emiliesappracone/symfony_read#build-entities-and-controllers">Entities and Controllers</a>  |                                                                                    |                                                                                                               |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#2--call-functions-in-entitycontroller">EntityController</a> |
 | <a href="https://github.com/emiliesappracone/symfony_read#build-entities-with-association">Entities associations</a>    |                                                                                    |                                                                                                               |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#2--in-view">Twig</a> |    
 
-### Start :
+## Start :
 `composer create-project symfony/skeleton MyProject`
 
-### Bundles :
+## Bundles :
 `composer require twig`
 
 `composer require annotations`
@@ -27,13 +27,13 @@
 
 `composer require doctrine`
 
-### Env :
+## Env :
 - change database connexion
 
-### Create Database
+## Create Database
 `php bin/console doctrine:database:create`
 
-### Build entities and controllers
+## Build entities and controllers
 - Make Controller :
 
 `php bin/console make:controller EntityController`
@@ -57,7 +57,7 @@ EntityRepository is where you'll create
 
 `php bin/console doctrine:migrations:migrate`
 
-### Build entities with association
+## Build entities with association
 
 - Make the controllers like previously
 
@@ -81,7 +81,7 @@ EntityRepository is where you'll create
 
 - Persist Entities in Database like previously 
 
-### Routes
+## Routes
 
 In this structure, routes are defined in each method of controllers, due to annotations bundle.
 
@@ -108,7 +108,7 @@ In this structure, routes are defined in each method of controllers, due to anno
             public function showAllArticles($lang, $id){}
         }
 
-### Twig
+## Twig
 
 Twig is a template engine for PHP. You can use Smarty too, but I choose Twig.
 Twig have his own syntax, like below :
@@ -228,7 +228,7 @@ Templates/
 - Important : all twig blocks have to be define in base.html.twig. If you define one in child of base it won't show you the content in the new twig block.
 ```
 
-### Assets
+## Assets
 
 Make you link relative with Asset Bundle. More infos : https://symfony.com/doc/current/frontend/encore/versioning.html
 
@@ -255,7 +255,7 @@ MyProject/
 
 `<link href="{{ asset('assets/css/myCss.css') }}" rel="stylesheet" type="text/css">`
 
-### Forms
+## Forms
 
 FormBuilder bundle is used to make EntityType class where you'll store all forms for one Entity. Then you can use those forms everywhere.
  
@@ -281,7 +281,7 @@ For instance :
 
 - Build form entity
   
-####### IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - TEST
+####### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - TEST
 
 ```diff
 ! cd rootOfYouProject
@@ -409,11 +409,11 @@ This is a basic call to form in view.
         {{ form_end(form) }}
     {% endblock %}
 
-####### IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY 
+####### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY 
 
 soon available
     
-### Multilingue
+## Multilingue
 
 ##### - MySQL
 Structure of column multilingue is in **JSON**, like below.
