@@ -37,12 +37,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="10544" />
+          <entry key="md" value="10577" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="10544" />
+          <entry key="Markdown" value="10577" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions" />
@@ -60,8 +60,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-6">
-                <caret line="238" column="6" selection-start-line="238" selection-end-line="238" selection-end-column="6" />
+              <first_editor relative-caret-position="377">
+                <caret line="307" lean-forward="true" selection-start-line="307" selection-end-line="307" />
               </first_editor>
               <second_editor />
             </state>
@@ -135,12 +135,12 @@
       <updated>1539081272680</updated>
       <workItem from="1539081273886" duration="4534000" />
       <workItem from="1539154311844" duration="16681000" />
-      <workItem from="1539241239775" duration="10014000" />
+      <workItem from="1539241239775" duration="10359000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31229000" />
+    <option name="totallyTimeSpent" value="31574000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1834" y="70" width="1788" height="834" extended-state="0" />
@@ -192,8 +192,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-6">
-            <caret line="238" column="6" selection-start-line="238" selection-end-line="238" selection-end-column="6" />
+          <first_editor relative-caret-position="377">
+            <caret line="307" lean-forward="true" selection-start-line="307" selection-end-line="307" />
           </first_editor>
           <second_editor />
         </state>

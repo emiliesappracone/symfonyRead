@@ -259,17 +259,17 @@ MyProject/
 
 FormBuilder bundle is used to make EntityType class where you'll store all forms for one Entity. Then you can use those forms everywhere.
 
-- Add bootstrap form style to twig : add line below in config/packages/twig.yaml
+**1- Add bootstrap form style to twig : add line below in config/packages/twig.yaml**
 
 ```diff
 + form_themes: ['bootstrap_4_layout.html.twig']
 ```
  
-- FormBuilder installation : `composer require symfony/form`
+**2- FormBuilder installation :** `composer require symfony/form`
 
 I used to install form validator which constraints field to be not empty based on a set of rules in Entity (Model > property type). 
 
-- Validator installation : `composer require symfony/validator`
+**3- Validator installation :** `composer require symfony/validator`
 
 For instance :
 
@@ -285,9 +285,9 @@ For instance :
 
 **List of assert type** : array, bool, callable, float, double, int, integer, iterable, long, null, numeric, object, real, resource, scalar, string, and others ... 
 
-- Build form entity
+**4- Build form entity**
   
-#### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - **MAKE YOUR OWN QUERIES**
+###### A- IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - **MAKE YOUR OWN QUERIES**
 
 ```diff
 ! cd rootOfYouProject
@@ -415,7 +415,7 @@ This is a basic call to form in view.
         {{ form_end(form) }}
     {% endblock %}
 
-#### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY - **USE MANAGER TO UPDATE**
+###### B- IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY - **USE MANAGER TO UPDATE**
 
 ##### EntityType => ServicesType
 
