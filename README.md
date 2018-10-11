@@ -287,7 +287,7 @@ For instance :
 ! cd rootOfYouProject
 ! mkdir Form
 ! cd Form/
-! touch EntityType
+! touch EntityType.php
 ```
 
 Make directory Form/ where you'll store all forms entity. In it make a file call EntityType (depends on entity's name).
