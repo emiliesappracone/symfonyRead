@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6ade2da-16ed-4fe9-9d03-b1e31e2d5c48" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,12 +37,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="md" value="9595" />
+          <entry key="md" value="9668" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="9595" />
+          <entry key="Markdown" value="9668" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.composer.actions" />
@@ -61,8 +60,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="325">
-                <caret line="396" column="18" lean-forward="true" selection-start-line="396" selection-start-column="18" selection-end-line="396" selection-end-column="18" />
+              <first_editor relative-caret-position="125">
+                <caret line="286" column="21" selection-start-line="286" selection-start-column="21" selection-end-line="286" selection-end-column="21" />
               </first_editor>
               <second_editor />
             </state>
@@ -136,12 +135,12 @@
       <updated>1539081272680</updated>
       <workItem from="1539081273886" duration="4534000" />
       <workItem from="1539154311844" duration="16681000" />
-      <workItem from="1539241239775" duration="5403000" />
+      <workItem from="1539241239775" duration="5595000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26618000" />
+    <option name="totallyTimeSpent" value="26810000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1834" y="70" width="1788" height="834" extended-state="0" />
@@ -160,7 +159,7 @@
       <window_info anchor="bottom" id="Docker" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49942726" weight="0.32884097" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49942726" visible="true" weight="0.32884097" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50057274" side_tool="true" weight="0.32884097" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -193,8 +192,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="325">
-            <caret line="396" column="18" lean-forward="true" selection-start-line="396" selection-start-column="18" selection-end-line="396" selection-end-column="18" />
+          <first_editor relative-caret-position="125">
+            <caret line="286" column="21" selection-start-line="286" selection-start-column="21" selection-end-line="286" selection-end-column="21" />
           </first_editor>
           <second_editor />
         </state>

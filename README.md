@@ -284,7 +284,10 @@ For instance :
 ####### IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - TEST
 
 ```diff
-! vérifier si cli exist !
+! cd rootOfYouProject
+! mkdir Form
+! cd Form/
+! touch EntityType
 ```
 
 Make directory Form/ where you'll store all forms entity. In it make a file call EntityType (depends on entity's name).
