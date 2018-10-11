@@ -258,6 +258,10 @@ MyProject/
 ## Forms
 
 FormBuilder bundle is used to make EntityType class where you'll store all forms for one Entity. Then you can use those forms everywhere.
+
+- Add bootstrap form style to twig : add line below in config/packages/twig.yaml
+
+`form_themes: ['bootstrap_4_layout.html.twig']`
  
 - FormBuilder installation : `composer require symfony/form`
 
