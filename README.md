@@ -68,7 +68,7 @@ The EntityRepository file is the file where you will be able to create your Cust
 
 `php bin/console make:entity`
 
-- Choose which property will be associated, edit one entity with : 
+- Choose which property will be associated to it and edit the entity with : 
 
 `php bin/console make:entity` 
 
@@ -80,13 +80,13 @@ The EntityRepository file is the file where you will be able to create your Cust
 
 > *relation type : choose between them*
 
-- Edit migration file like previously
+- Edit migration file as previously
 
 - Persist Entities in Database like previously 
 
 ## Routes
 
-In this structure, routes are defined in each method of controllers, due to annotations bundle.
+In this structure, the routes should be defined for each method of the Controller, by using to annotations bundle.
 
     Class ArticlesController {
         /**
@@ -95,12 +95,12 @@ In this structure, routes are defined in each method of controllers, due to anno
         public function showAllArticles(){}
     }
 
-- Make a redirection to this route with the name : `return $this->redirectToRoute("showOneArticle", ["id" => $id]);`
+- For redirectiing to this route, you can use this method : `return $this->redirectToRoute("showOneArticle", ["id" => $id]);`
 
-- Can add slug to pass param in path, via : `@Route("/article/{id}", name="showOneArticle")`
-- Can add requirements to slug, via : `@Route("/article/{id}", name="showOneArticle", requirements={"id"="\d+"})` 
-    - if you have many params : `requirements={"param1" : "\d+", "param2" : "\d+"}`
-- List all routes : `php bin/console debug:router`
+- You should define the passed GET parametters, by using this syntax : `@Route("/article/{id}", name="showOneArticle")`
+- You can also add requirements to slug, by adding a third parametter : `@Route("/article/{id}", name="showOneArticle", requirements={"id"="\d+"})` 
+    - Example if you have more than one parametter : `requirements={"param1" : "\d+", "param2" : "\d+"}`
+- Use this commande to list all the routes : `php bin/console debug:router`
 - Use slug(s) value in param(s) method :
 
 
@@ -113,13 +113,15 @@ In this structure, routes are defined in each method of controllers, due to anno
 
 ## Twig
 
-Twig is a template engine for PHP. You can use Smarty too, but I choose Twig.
+I usually choose Twig as template engine for my different projects.
+Twig is a template engine for PHP , it is easy to use with Symfony, you can also try to use other template engine as Blade, Smarty, ...
+
 Twig have his own syntax, like below :
 
-- echo variable : `{{ myVariable }}`
-- call function : `{% for item in array %}` *to do* `{% endfor %}`
+- echo a variable : `{{ myVariable }}`
+- call a function : `{% for item in array %}` *to do* `{% endfor %}`
 
-List of functions used :
+List of some functions that we usually use :
 
 * for : `{% for item in array %}` *to do* `{% endfor %}`
 * if : `{% if %}` *to do* `{% endif %}`
@@ -137,9 +139,9 @@ List of functions used :
 * date format : `{{ myDate|date('d-m-Y') }}` 
 * filtre uppercase : `{% filter upper %}` *this title is in upper* `{% endfilter %}`
 
-For more go : https://twig.symfony.com/doc/2.x/templates.html
+For more informations, please visit the official documentation : https://twig.symfony.com/doc/2.x/templates.html
 
-##### My Twig structure for symfony :
+##### My Twig Template hierarchy for my project :
 
 Templates/ 
 - Admin/
@@ -153,7 +155,7 @@ Templates/
 - base.html.twig
 
 ```diff
-- N.B : When you'll create entity, with cli, templates/ will be updated with new directory entity and file.
+- N.B : When you create an new entity with cli, the Templates directory will be updated with a new Entity directory and files.
 ```
 
 1- Example of my **simple** *base.html.twig* :
@@ -233,13 +235,13 @@ Templates/
 
 ## Assets
 
-Make you link relative with Asset Bundle. More infos : https://symfony.com/doc/current/frontend/encore/versioning.html
+Add your relative links  with Asset Bundle. For More infos, visit the official documentation : https://symfony.com/doc/current/frontend/encore/versioning.html
 
 - Download bundle asset :
 
 `composer require asset`
 
-###### IF YOU ALREADY HAVE CSS
+###### IF YOU ALREADY HAVE SOME CSS CODE 
 - Copy paste you asset/ directory in Public/ (at the root of the project)
 
 MyProject/
@@ -250,17 +252,19 @@ MyProject/
              js/
              ...   
 
-- Copy paste link css in base.html.twig
+- Copy paste the CSS link in base.html.twig
 
 `<link href="assets/css/myCss.css" rel="stylesheet" type="text/css" >`
 
-- Use asset function from Asset Bundle
+- Use the sset function getting from the Asset Bundle
 
 `<link href="{{ asset('assets/css/myCss.css') }}" rel="stylesheet" type="text/css">`
 
 ## Forms
 
-FormBuilder bundle is used to make EntityType class where you'll store all forms for one Entity. Then you can use those forms everywhere.
+FormBuilder bundle is used to create EntityType class where you will be able to store all forms for one Entity. 
+
+After that, you will be able to use those forms everywhere.
 
 **1- Add bootstrap form style to twig : add line below in config/packages/twig.yaml**
 
@@ -270,7 +274,7 @@ FormBuilder bundle is used to make EntityType class where you'll store all forms
  
 **2- FormBuilder installation :** `composer require symfony/form`
 
-I used to install form validator which constraints field to be not empty based on a set of rules in Entity (Model > property type). 
+I used to set the forms validation which constraints field to be not empty based on a set of rules in Entity (Model > property type). 
 
 **3- Validator installation :** `composer require symfony/validator`
 
@@ -301,7 +305,8 @@ For instance :
 or use PhpStorm or all other IDE
 ```
 
-Make directory Form/ where you'll store all forms entity. In it make a file call EntityType (depends on entity's name).
+Make directory Form/ where you'll store all forms entity. Create file called EntityType (depending on yourentity's name) into.
+
 Extends AbstractType class.
 
 ###### EntityType file (example : ServicesType)
@@ -341,8 +346,8 @@ Extends AbstractType class.
         
     
 ```diff
-! Be aware of what's class you import/use for fieldType, only use Type of Form bundle. 
-! But for EntityType use Doctrine bundle. Be sure you use the good Type class.
+! Be aware of which class you need to import/use for fieldType, you should only use Type of Form bundle. 
+! But for EntityType use you need to use the Doctrine bundle. Be sure that you use the good Type class.
 ```    
 
 ###### EntityRepository file (example : ServicesRepository)
@@ -401,15 +406,15 @@ Extends AbstractType class.
 
 ###### Entity view file retrieve all (example : admin/services/index.html.twig)
 
-Here is a table you have to make to show all services. 
-In it just add link route to edit form : 
+There is a table that you have to create all services. 
+Add link route to edit form into : 
 
 `<a href="{{ path("updateServiceDescription", {"id":service.id, "lang":lang}) }}"><i class="fa fa-pencil text-warning"></i></a>`
                                                                                                                     
 
 ###### Entity view file update one (example : admin/services/form.html.twig)
 
-This is a basic call to form in view.
+This is an example of a basic call to form in view.
 
     {% extends 'base.html.twig' %}
     
@@ -441,7 +446,7 @@ This is a basic call to form in view.
 ```diff
 + Change from A-
 * Add all fields/properties of entity as input/textarea/etc...
-* Important with CollectionType input you can change JSON of you property
+* Important with CollectionType input  : you can change JSON of you property
 * Add Service::class at setDefaults method of configureOptions method => purpose is to link entity and data from form
 ```     
     
