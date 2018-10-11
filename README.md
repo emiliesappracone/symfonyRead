@@ -192,7 +192,7 @@ Templates/
     </html>
 
 ```diff
-! here you can call all js and css will be called for front and admin part 
+Here you can call all js and css needed for the front and admin part 
 ```
 
 2- Example of my **simple** *admin.html.twig* :
@@ -214,7 +214,7 @@ Templates/
     {% endblock %}
 
 ```diff
-! here you can define menu and footer that will be call in admin part 
+Here you can define the menu and the footer that will be call in admin part 
 ```
 
 3- Example of my **simple** *admin/myModule/index.html.twig* :
@@ -226,7 +226,7 @@ Templates/
     {% endblock %}
     
 ```diff
-! here you can overload block container with new data for each admin/module/ files
+Here you can overload block container with new data for each admin/module/ files
 ```
 
 ```diff
