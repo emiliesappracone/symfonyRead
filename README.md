@@ -1,6 +1,6 @@
 ## Here you will find the complete process for starting a Symfony project in the easiest way
 
-#### The following documentation was created based on the official doccumentation of Symfony 
+#### The following documentation was created based on the official documentation of Symfony 
 
 
 |      Create the project                                                                                                     |     Route                                                                          | Twig                                                                                                          | Asset                                                                                           | Multilingue                                                                                              |
@@ -245,7 +245,7 @@ Make you link relative with Asset Bundle. More infos : https://symfony.com/doc/c
 MyProject/
 
     Public/
-        asset/
+        assets/
              css/
              js/
              ...   
@@ -600,4 +600,6 @@ Update name by lang and id ofc :
         </tr>
     {% endfor %}
     
-    
+ ## Security bundle
+ 
+ Install bundle : `composer require symfony/security-bundle`   
