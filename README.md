@@ -13,7 +13,6 @@
 | <a href="https://github.com/emiliesappracone/symfony_read#build-entities-and-controllers">Entities and Controllers</a>  |                                                                                    |                                                                                                               |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#2--call-functions-in-entitycontroller">EntityController</a> |
 | <a href="https://github.com/emiliesappracone/symfony_read#build-entities-with-association">Entities associations</a>    |                                                                                    |                                                                                                               |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#2--in-view">Twig</a> |    
 
-
 ### Start :
 `composer create-project symfony/skeleton MyProject`
 
@@ -255,6 +254,151 @@ MyProject/
 - Use asset function from Asset Bundle
 
 `<link href="{{ asset('assets/css/myCss.css') }}" rel="stylesheet" type="text/css">`
+
+### Forms
+
+FormBuilder bundle is used to make EntityType class where you'll store all forms for one Entity. Then you can use those forms everywhere.
+ 
+- FormBuilder installation : `composer require symfony/form`
+
+I used to install form validator which constraints field to be not empty based on a set of rules in Entity (Model > property type). 
+
+- Validator installation : `composer require symfony/validator`
+
+For instance :
+
+    /**
+    * @Assert\NotBlank() ! means not empty
+    * @Assert\Type(
+                    type="integer",
+                    message="Not integer"
+                  )
+    private $id;
+
+**Default** assert type is **string**.
+
+**List of assert type** : array, bool, callable, float, double, int, integer, iterable, long, null, numeric, object, real, resource, scalar, string, and others ... 
+
+- Build form entity
+  
+####### IN CASE OF UPDATE DESCRIPTION OF SERVICES ENTITY - TEST
+
+```diff
+! vérifier si cli exist !
+```
+
+Make directory Form/ where you'll store all forms entity. In it make a file call EntityType (depends on entity's name).
+Extends AbstractType class.
+
+###### EntityType file (example : ServicesType)
+
+    use Symfony\Component\Form\AbstractType;
+    use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+    use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+    use Symfony\Component\Form\FormBuilderInterface;
+    
+    class ServicesType extends AbstractType
+    {
+        /**
+        *   THIS IS THE FORM JUST TO UPDATE DESCRIPTION 
+        */
+        public function buildForm(FormBuilderInterface $builder, array $options)
+        {
+            $builder
+                ->add('description', TextareaType::class)
+                ->add('submit', SubmitType::class)
+            ;
+        }
+    
+        /**
+        *   Every form needs to know the name of class (entity) that holds the underlying data
+        *   HERE SET TO NULL CAUSE IT'S A SPECIAL QUERY
+        */
+        public function configureOptions(OptionsResolver $resolver)
+        {
+            $resolver->setDefaults(['data_class' => null]);
+        }
+    }
+        
+    
+```diff
+! Be aware of what's class you import/use for fieldType, only use Type of Form bundle. But for EntityType use Doctrine bundle. Be sure you use the good Type class.
+```    
+
+###### EntityRepository file (example : ServicesRepository)
+
+    /**
+     * UPDATE ONLY DESCRIPTION FROM services entity
+     * @param $lang
+     * @param $id
+     * @return bool
+     * @throws \Doctrine\DBAL\DBALException
+     */
+    public function updateServiceDescription($id, $description){
+        $connexion = $this->getEntityManager()->getConnection();
+    
+        $query = 'UPDATE services
+                SET description = :description
+                WHERE id = :id';
+        $stmt = $connexion->prepare($query);
+        $stmt->bindParam(':id' ,$id);
+        $stmt->bindParam(':description' ,$description);
+        return $stmt->execute();
+    }
+
+###### EntityController file (example : ServicesController)
+
+    /**
+    * UPDATE DESCRIPTION OF SERVICE 
+    * @Route("/{lang}/services/update/{id}", name="updateServiceDescription")
+    */
+    public function updateDescription($lang, $id, Request $request){
+        // call what service need to be updated
+        /* method called below is "unappropiated" no need to get data by lang, only by id */   
+        $service = $this->getDoctrine()->getRepository(Services::class)->findByServicesByLangAndId($lang, $id);
+        // call form entity class form
+        $form = $this->createForm(ServicesType::class, $service);
+        // pass request to form
+        $form->handleRequest($request);
+        // check if $form is submitted
+        if($form->isSubmitted() && $form->isValid()){
+            // get data in form
+            $value = $form->getData();
+            // get new description
+            $newDescription = $value['description'];
+            // update description function
+            $this->getDoctrine()->getRepository(Services::class)->updateServiceDescription($id, $newDescription);
+            // redirect to route
+            return $this->redirectToRoute("servicesByLang", ["lang" => $lang, "id" => $id]);
+        }
+        // if form not already submitted or not valid call createView method from form to send form in twig view
+        return $this->render('admin/services/form.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
+        );
+    }
+
+###### Entity view file (example : admin/services/index.html.twig)
+
+Here is a table you have to make to show all services. 
+In it just add link route to edit form : `<a href="{{ path("updateServiceDescription", {"id":service.id, "lang":lang}) }}"><i class="fa fa-pencil text-warning"></i></a>`
+                                                                                                                    
+
+###### Entity view file (example : admin/services/form.html.twig)
+
+This is a basic call to form in view.
+
+    {% extends 'base.html.twig' %}
+    
+    {% block body %}
+        {{ form_start(form) }}
+        {{ form_end(form) }}
+    {% endblock %}
+
+####### IN CASE OF UPDATE ONE SERVICE OF SERVICES ENTITY 
+
+soon available
     
 ### Multilingue
 
@@ -369,3 +513,5 @@ Update name by lang and id ofc :
             </td>
         </tr>
     {% endfor %}
+    
+    
