@@ -288,6 +288,8 @@ For instance :
 ! mkdir Form
 ! cd Form/
 ! touch EntityType.php
+
+or use PhpStorm or all other IDE
 ```
 
 Make directory Form/ where you'll store all forms entity. In it make a file call EntityType (depends on entity's name).
