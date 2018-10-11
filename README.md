@@ -1,19 +1,21 @@
 ## Here you will find the complete process for starting a Symfony project in the easiest way
 
 #### The following documentation was created based on the official doccumentation of Symfony 
+
+
 |      Create the project                                                                                                     |     Route                                                                          | Twig                                                                                                          | Asset                                                                                           | Multilingue                                                                                              |
 | ----------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| <a href="https://github.com/emiliesappracone/symfony_read#start-">Start</a>                                             | <a href="https://github.com/emiliesappracone/symfony_read#bundles-"> Routes</a>    | <a href="https://github.com/emiliesappracone/symfony_read#twig-"> Twig</a>                                    | <a href="https://github.com/emiliesappracone/symfony_read#assets"> Assets</a>                   | <a href="https://github.com/emiliesappracone/symfony_read#--mysql"> Mysql </a>                           | 
+| <a href="https://github.com/emiliesappracone/symfony_read#Createtheproject-">Create the project</a>                                             | <a href="https://github.com/emiliesappracone/symfony_read#bundles-"> Routes</a>    | <a href="https://github.com/emiliesappracone/symfony_read#twig-"> Twig</a>                                    | <a href="https://github.com/emiliesappracone/symfony_read#assets"> Assets</a>                   | <a href="https://github.com/emiliesappracone/symfony_read#--mysql"> Mysql </a>                           | 
 | <a href="https://github.com/emiliesappracone/symfony_read#bundles-"> Bundles</a>                                        |                                                                                    | <a href="https://github.com/emiliesappracone/symfony_read#my-twig-structure-for-symfony-">Structure</a>       |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#--when-makeentity">At creation of entity</a>   |                                                                                   
 | <a href="https://github.com/emiliesappracone/symfony_read#env-">Env</a>                                                 |                                                                                    |                                                                                                               |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#--with-querybuilder-make-read-and-update-queries-">QueryBuilder</a> |
 | <a href="https://github.com/emiliesappracone/symfony_read#create-database">Create Database</a>                          |                                                                                    |                                                                                                               |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#1--create-functions-read-and-update-in-entityrepository">EntityRepository</a>  |
 | <a href="https://github.com/emiliesappracone/symfony_read#build-entities-and-controllers">Entities and Controllers</a>  |                                                                                    |                                                                                                               |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#2--call-functions-in-entitycontroller">EntityController</a> |
 | <a href="https://github.com/emiliesappracone/symfony_read#build-entities-with-association">Entities associations</a>    |                                                                                    |                                                                                                               |                                                                                                 | <a href="https://github.com/emiliesappracone/symfony_read#2--in-view">Twig</a> |    
 
-## Start :
+## Create the project :
 `composer create-project symfony/skeleton MyProject`
 
-## Bundles :
+## Add the Bundles :
 `composer require twig`
 
 `composer require annotations`
@@ -24,41 +26,45 @@
 
 `composer require doctrine`
 
-## Env :
+## Edit the Env file :
 - change database connexion
 
-## Create Database
+## Generate a new database
 `php bin/console doctrine:database:create`
 
 ## Build entities and controllers
-- Make Controller :
+- Create a Controller :
 
 `php bin/console make:controller EntityController`
 
-- Make Entity :
+- Create an Entity :
 
 `php bin/console make:entity` 
 
+Symfony Console : 
+
+- Choose name of Entity (Sql Table Name)
+- Choose all property ( Sql Column)
+
 ```diff
-When you create an entity : this will create Entity (Model), EntityRepository, Entity templates twig 
-EntityRepository is where you'll create 
+When you create an entity the Entity (Model), the EntityRepository and Entity templates twig will be created.
+
+The EntityRepository file is the file where you will be able to create your Custom SQL Request for exemple 
 ```
 
-- Choose name of Entity (Table mysql)
-- Choose all property (Column mysql)
 - Edit migration file
 
 `php bin/console make:migration`
 
-- Persist new Entity in Database
+- Persist the created Entity in Database
 
 `php bin/console doctrine:migrations:migrate`
 
 ## Build entities with association
 
-- Make the controllers like previously
+- Create the controllers (Explain previously)
 
-- Make 2 entities`: **Categories** & **Articles**
+- Create two entities`: **Categories** & **Articles**
 
 `php bin/console make:entity`
 
