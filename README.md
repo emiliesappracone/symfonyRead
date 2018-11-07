@@ -119,15 +119,15 @@ In this structure, the routes should be defined for each method of the Controlle
 
 ## Twig
 
-I usually choose Twig as template engine for my different projects.
-Twig is a template engine for PHP , it is easy to use with Symfony, you can also try to use other template engine as Blade, Smarty, ...
+I choose Twig as template engine for my symfony projects.
+Twig is a template engine for PHP , it is easy to use with Symfony. You can also try to use other template engine as Blade, Smarty, ...
 
 Twig have his own syntax, like below :
 
 - echo a variable : `{{ myVariable }}`
 - call a function : `{% for item in array %}` *to do* `{% endfor %}`
 
-List of some functions that we usually use :
+List of some functions that I usually use :
 
 * for : `{% for item in array %}` *to do* `{% endfor %}`
 * if : `{% if %}` *to do* `{% endif %}`
