@@ -49,7 +49,7 @@ Symfony Console :
 ```diff
 When you create an entity the Entity (Model), the EntityRepository and Entity templates twig will be created.
 
-The EntityRepository file is the file where you will be able to create your Custom SQL Request for exemple 
+The EntityRepository file is the file where you will be able to create your Custom SQL Request for example 
 ```
 
 - Edit migration file
@@ -62,13 +62,13 @@ The EntityRepository file is the file where you will be able to create your Cust
 
 ## Build entities with association
 
-- Create the controllers (Explain previously)
+- Create the controllers (Explained previously)
 
-- Create two entities`: **Categories** & **Articles**
+- Create two entities : **Categories** & **Articles**
 
 `php bin/console make:entity`
 
-- Choose which property will be associated to it and edit the entity with : 
+- Choose which property will be associated with it and edit the entity by using cli : 
 
 `php bin/console make:entity` 
 
@@ -78,15 +78,17 @@ The EntityRepository file is the file where you will be able to create your Cust
 
 > *type : relation*
 
-> *relation type : choose between them*
+> *relation type : choose which one is relevant for your association*
 
-- Edit migration file as previously
+- Edit migration file as explained previously
 
-- Persist Entities in Database like previously 
+- Persist Entities in Database as explained previously 
 
 ## Routes
 
-In this structure, the routes should be defined for each method of the Controller, by using to annotations bundle.
+In this structure, the routes should be defined for each method of the Controller, by using annotations bundle.
+
+- Annotation route takes two parameters : the path uri and the name of the route.
 
     Class ArticlesController {
         /**
@@ -95,13 +97,17 @@ In this structure, the routes should be defined for each method of the Controlle
         public function showAllArticles(){}
     }
 
-- For redirectiing to this route, you can use this method : `return $this->redirectToRoute("showOneArticle", ["id" => $id]);`
+- Make a redirection to this route by using this method : `return $this->redirectToRoute("showOneArticle", ["id" => $id]);`
 
-- You should define the passed GET parametters, by using this syntax : `@Route("/article/{id}", name="showOneArticle")`
-- You can also add requirements to slug, by adding a third parametter : `@Route("/article/{id}", name="showOneArticle", requirements={"id"="\d+"})` 
+- In the path uri parameter define a dynamic url parameter called a slug, by using this syntax : `@Route("/article/{id}", name="showOneArticle")`
+
+- You can also add requirements (RegEx) to slug by adding a third parameter of Annotation route : `@Route("/article/{id}", name="showOneArticle", requirements={"id"="\d+"})` 
+
     - Example if you have more than one parametter : `requirements={"param1" : "\d+", "param2" : "\d+"}`
+
 - Use this commande to list all the routes : `php bin/console debug:router`
-- Use slug(s) value in param(s) method :
+
+- Use slug(s) value(s) in parameter(s) method :
 
 
         Class ArticlesController {
