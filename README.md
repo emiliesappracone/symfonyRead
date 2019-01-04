@@ -497,7 +497,7 @@ This is an example of a basic call to form in view.
        
 available soon
        
-## Multilingue
+## Multilingue - need big update !! not appropiate !!
 
 ##### - MySQL
 Structure of column multilingue is in **JSON**, like below.
